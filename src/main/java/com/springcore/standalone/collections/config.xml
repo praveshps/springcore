@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:util="http://www.springframework.org/schema/util"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd" >
+ 
+ <!-- add below lines to use util schema
+ xmlns:util="http://www.springframework.org/schema/util"
+ http://www.springframework.org/schema/util
+ http://www.springframework.org/schema/util/spring-util.xsd
+  -->
+  
+ <!-- creating standalone list -->
+<util:list list-class="java.util.LinkedList" id = "mybestfriends">
+	<value>Aman</value>
+	<value>Raman</value>
+	<value>Naman</value>
+	<value>Chaman</value>
+</util:list>
+
+<!-- Similarly for Map -->
+
+<!-- creating standalone property -->
+<util:properties id = "dbconfig">
+	<prop key="driver">com.mysql.jdbc.Driver</prop>
+	<prop key="user">Pravesh</prop>
+	<prop key="password">abc</prop>
+	<prop key="url">mysql:jdbc://localhost:3306/database</prop>
+</util:properties>
+
+ <bean class="com.springcore.standalone.collections.Person" name="person1">
+ 
+ 	<!-- <property name="friends">
+ 		<ref bean = "mybestfriends"/>
+ 	</property> -->
+ 	
+ 	<property name="friends" ref = "mybestfriends"/>
+ 	<property name="properties" ref = "dbconfig"></property>
+ </bean>
+ 
+ <bean class="com.springcore.standalone.collections.Person" name="person2">
+ 
+ 	<!-- <property name="friends">
+ 		<ref bean = "mybestfriends"/>
+ 	</property> -->
+ 	
+ 	<property name="friends" ref = "mybestfriends"/>
+ </bean>
+ </beans> 

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd" >
+ 
+ <!-- Method 1 //SETTER INJECTION-->
+ <bean class="com.springcore.collections.Emp" name="emp1">
+ 
+ 	<property name="name" value = "Radhe"/>
+  
+ <!-- Collection Types -->
+ <!-- LIST -->
+ 	<property name="phones">
+ 		<list>
+ 			<value>99999999</value>
+ 			<value>88888888</value>
+ 			<value>77777777</value>
+ 		</list>
+ 	</property>
+ 
+ <!-- SET -->
+ 	<property name="address">
+ 		<set>
+ 			<value>Delhi</value>
+ 			<value>Lucknow</value>
+ 			<value>Hardoi</value>
+ 		</set>
+ 	</property>
+ 
+ <!-- MAP -->
+ 	<property name="courses">
+ 		<map>
+ 			<entry key = "java" value = "1 months"/>
+ 			<entry key = "javaEE" value = "2 months"/>
+ 			<entry key = "javaSE" value = "3 months"/>
+ 		</map>
+ 	</property>
+ </bean>
+ </beans> 

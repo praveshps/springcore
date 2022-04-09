@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd" >
+ 
+<bean class = "com.springcore.autowire.Address" name = "address">
+	<property name="street" value = "Temp street"/>
+	<property name="city" value = "Delhi"/>
+</bean>
+
+<bean class = "com.springcore.autowire.Address" name = "address2">
+	<property name="street" value = "Second street"/>
+	<property name="city" value = "Kanpur"/>
+</bean>
+
+<!-- SETTER INJ is used for byName and byType -->
+
+<!-- AUTOWIRING byName , will check for the bean with name (Address) as that of used inside the class (Emp) -->
+<!-- reference variable name used in the class (Emp) should be same as that of the bean name (address) defined in the xml file  -->
+<bean class = "com.springcore.autowire.Emp" name = "emp1" autowire = "byName">	
+</bean>
+
+<!-- AUTOWIRING byType , will check for the type (Address) of bean referenced in the class (Emp)
+<bean class = "com.learnspring.springcore.autowire.Emp" name = "emp1" autowire = "byType">
+</bean>
+-->
+
+<!-- AUTOWIRING by Constructor , will check for the bean with name (Address) as that of used inside the class (Emp)
+  and it will call parameterized constructor
+<bean class = "com.learnspring.springcore.autowire.Emp" name = "emp1" autowire = "constructor">
+</bean>
+-->
+ </beans> 
